@@ -1,0 +1,1 @@
+execute if data storage ptl:stdin Map.Self store result score $map.length stdout run data get storage ptl:stdin Map.Self
