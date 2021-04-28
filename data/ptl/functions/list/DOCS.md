@@ -53,6 +53,7 @@ The following operations on Lists are provided, either as functions or translata
   * The value of an item is determined by its value returned via `execute store result`
 * `remove : <Self> <Item> -> <Self> <$index>`
   * Removes the first instance of `<Item>` in `<Self>` and returns its `<$index>`
+  * Does nothing if `<Item>` is not present in `<Self>`
   * More efficient than `find` and `pop` chained together
 * `reverse : <Self> -> <Self>`
   * Reverses the order of `<Self>`
