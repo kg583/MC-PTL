@@ -72,7 +72,7 @@ The following categories are used:
  	* Example: `scoreboard players get $set.is_subset stdout`
 * `var`
  	* Values which can change during execution
-     * There should be no expectation of a `var` variable surviving between independent function calls
+      * There should be no expectation of a `var` variable surviving between independent function calls
  	* Names should be in `snake_case` or `UpperCamelCase`
  	* Example: `data modify storage ptl:var MyVar set value "foo"`
 
