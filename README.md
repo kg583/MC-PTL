@@ -54,25 +54,25 @@ The PTL makes use of existing `MCFUNCTION` commands and side-effects to implemen
 The following categories are used:
 * `const`
   * Values which should not change during execution
-    * Values should be accessible globally and established in functions tagged under `load`
+      * Values should be accessible globally and established in functions tagged under `load`
   * Names should be in `$SCREAMING_SNAKE_CASE` or `POINTED.SCREAMING_SNAKE_CASE`
   * Example: `scoreboard players set $MAX_COUNT const 50`
 * `stdin`
  	* Values which are inputs to a function
-    * Values derived directly from inputs can also be placed in this category
-    * The input data type on which to operate should be passed as `ptl:stdin <type>.Self`, which is not guaranteed to be preserved
-    * Necessary inputs are assumed to exist once a function is called
+      * Values derived directly from inputs can also be placed in this category
+      * The input data type on which to operate should be passed as `ptl:stdin <type>.Self`, which is not guaranteed to be preserved
+      * Necessary inputs are assumed to exist once a function is called
  	* Names should be in `pointed.snake_case` or `Pointed.UpperCamelCase`
  	* Example: `data modify storage ptl:stdin List.Self set value [1,2,3]`
 * `stdout`
  	* Values which are returned from a function
-    * The modified data on which the operation was performed should be returned in `ptl:stdout <type>.Self`
-    * Only input parameters which are potentially altered/explicitly returned are passed to `stdout`
+      * The modified data on which the operation was performed should be returned in `ptl:stdout <type>.Self`
+      * Only input parameters which are potentially altered/explicitly returned are passed to `stdout`
  	* Names should be in `pointed.snake_case` or `Pointed.UpperCamelCase`
  	* Example: `scoreboard players get $set.is_subset stdout`
 * `var`
  	* Values which can change during execution
-    * There should be no expectation of a `var` variable surviving between independent function calls
+     * There should be no expectation of a `var` variable surviving between independent function calls
  	* Names should be in `snake_case` or `UpperCamelCase`
  	* Example: `data modify storage ptl:var MyVar set value "foo"`
 
