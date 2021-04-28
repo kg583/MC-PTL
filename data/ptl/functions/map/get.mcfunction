@@ -1,3 +1,5 @@
-scoreboard players set $diff var 1
-data modify storage ptl:stdout Map.Self set from storage ptl:stdin Map.Self
-execute if data storage ptl:stdin Map.Self if data storage ptl:stdin Map.Key run function ptl:map/getter
+# map/get
+# @stdin  Map.Self     The map to search
+# @stdin  Map.Key      The key to acquire
+# @stdout Map.Value    The value corresponding to <Key> in <Self>
+execute if data storage ptl:stdin Map.Self[0] run function ptl:map/getter

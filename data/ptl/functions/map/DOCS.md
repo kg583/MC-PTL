@@ -17,22 +17,21 @@ The following operations on Maps are provided, either as functions or translatab
 * `get : <Self> <Key> -> <Value>`
   * Returns the `<Value>` in `<Self>` associated with `<Key>`
   * Does not alter `<Value>` if `<Key>` is not in `<Self>`
-* `find : <Self> <Item> -> <$index>`
-  * Finds the `<$index>` of `<Item>` in `<Self>` treated as a List
-  * Returns `-1` if `<Item>` is not in `<Self>`
 * `length : execute store result <$score> <obj> run data get <locale> <path-to-Self>`
   * Stores the length of `<Self>` in `<$score> <obj>`
 * `keys : data get <locale> <path-to-Self>[].Key`
   * Returns the keys of `<Self>` as a List
-* `merge : <Self> <Other> -> <Self>`
+* `merge : <Self> <Other> -> <Merged>`
   * Combines the maps `<Self>` and `<Other>` into a single map
   * If both `<Self>` and `<Other>` contain the same key, values from `<Other>` take precedence
 * `pop : <Self> <Key> -> <Self> <Value>`
   * Removes the item specified by `<Key>` from `<Self>`, returning the reduced map
   * Does nothing if `<Key>` is not in `<Self>`, and sets `<Value>` to the corresponding value otherwise
-* `set : <Self> <Item> <Key=Item.Key> <Value=Item.Value> -> <Self>`
+* `set : <Self> <Key> <Value> -> <Self>`
   * Sets the value of `<Key>` in `<Self>` to `<Value>`
-  * `<Key>` and `<Value>` are derived from `<Item>` if it exists
-  * If the item does not exist in `<Self>`, it is added (to the end)
+  * If the `<Key>` does not exist in `<Self>`, it is added (to the end)
+* `update : <Self> <Item> -> <Self>`
+  * Adds `<Item>` to `<Self>`, replacing the value of `<Item.Key>` with `<Item.Value>` if it exists
+  * If `<Item>` does not exist in `<Self>`, it is added (to the end)
 * `values : data get <locale> <path-to-Self>[].Value`
   * Returns the values of `<Self>` as a List
