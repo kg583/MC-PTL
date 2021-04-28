@@ -38,7 +38,7 @@ The following operations on Lists are provided, either as functions or translata
   * Computes the minimum value in `<Self>` in `<$min>`
   * The value of an item is determined by its value returned via `execute store result`
 * `pop : <Self> <$index> -> <Self> <Item>`
-  * Removes the item specified by `<$index>` from `<Self>`, returning the shortened list
+  * Deletes the item specified by `<$index>` from `<Self>`, returning the shortened list
   * Does nothing if `<$index>` is out-of-range, sets `<Item>` to the deleted item otherwise
 * `prepend : data modify <locale> <path-to-Self> prepend from <locale> <path-to-Item>`
   * Adds `<Item>` to the beginning of `<Self>`
@@ -51,6 +51,9 @@ The following operations on Lists are provided, either as functions or translata
 * `quor : <Self> -> <$quol>`
   * Recursively performs `Self[-1] / Self[-2]` until a single value is obtained in `<$quor>`
   * The value of an item is determined by its value returned via `execute store result`
+* `remove : <Self> <Item> -> <Self> <$index>`
+  * Removes the first instance of `<Item>` in `<Self>` and returns its `<$index>`
+  * More efficient than `find` and `pop` chained together
 * `reverse : <Self> -> <Self>`
   * Reverses the order of `<Self>`
 * `rfind : <Self> <Item> -> <$index>`

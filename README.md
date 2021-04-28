@@ -36,15 +36,16 @@ my_dict[bar] = value
 ```
 In the first line, the list entry at a specific index is being set to a given value, and in the second, a specific key in a dictionary. The latter meanwhile, have arbitrary indices and keys being accessed; that is, the values of `foo` and `bar` are not hard-coded and hence not known at runtime, and are obtained through means that might be completely dependent on a player's choice. The standard NBT format does not have support for this mode of access.
 
-If the former mode of access is all that is being done on a given container, then the PTL is not necessary; standard NBT types will be smaller and succinct in such cases as well. However, it is rare to not require access in the form of the latter in more complex code, so using the PTL should be considered as a standard format for such purposes.
+If the former mode of access is all that is being done on a given container, then the PTL is not necessary; standard NBT types will be smaller and more succinct in such cases as well. However, it is rare to not require access in the latter form in more complex code, so using the PTL should be considered as a standard format for such purposes.
 
 ### Iteration
 The PTL also provides capabilities to easily iterate over container types, which is similarly challenging if not impossible using standard NBT types. Each type contains template code for iterating over its contents, whereby the necessary functions and operations on the data can be substituted. Iteration looks roughly like:
 ```
+# my_iterator.mcfunction
 data modify storage ptl:var Current set from storage ptl:stdin <type>.Self[0]
 <insert functions to operate on Current here>
 data remove storage ptl:stdin <type>.Self[0]
-execute if data storage ptl:stdin <type>.Self run function ptl:<type>/iterator
+execute if data storage ptl:stdin <type>.Self[0] run function <namespace>/my_iterator
 ```
 
 ## Code Design
@@ -86,3 +87,6 @@ Additional documentation can be provided by users should it be justifiably neces
 
 ## Installation
 The PTL can be installed by either downloading the most recent release as a ZIP file (coming soon) and including it in the `datapacks` folder, or cloning this repository into the same `datapacks` folder so that it is always kept up-to-date. Files associated with Git are automatically ignored.
+
+## Bug Reports
+Any known bugs should be raised as an issue on this repository with a simple (ideally _simplest_) reproducible setup. The general functionality of PTL functions can be ascertained via the unit tests found in the `tests` folder. To perform these tests, run `/function ptl:tests/all` in a _Minecraft_ world with the PTL enabled as a datapack; the output will be the number of successful tests compared to the total number, with erroneous results recorded as they appear. To test a specific data type, use `/function ptl:tests/<type>`.
