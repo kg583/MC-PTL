@@ -1,5 +1,5 @@
 # map/set
-# @stdin  Map.Self  The map to modify
+# @stdin  Map.Self  The Map to modify
 # @stdin  Map.Key   The key to set
 # @stdin  Map.Value The value to set
 # @stdout Map.Self  <Self> with <Value> at <Key>

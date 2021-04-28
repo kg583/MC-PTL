@@ -1,5 +1,5 @@
 # map/update
-# @stdin  Map.Self  The map to modify
+# @stdin  Map.Self  The Map to modify
 # @stdin  Map.Item  The item to add
 # @stdout Map.Self  <Self> with <Item> added, replacing any existing item with the same key
 scoreboard players set $has_key var 0
