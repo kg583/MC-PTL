@@ -12,6 +12,8 @@ The following operations on Lists are provided, either as functions or translata
 * `concat : <Self> <Other> -> <Self>`
   * Appends `<Other>` onto `<Self>`, preserving its order
   * Does nothing if `<Other>` is empty
+* `count : <Self> <Item> -> <$count>`
+  * Counts the number of occurrences of `<Item>` in `<Self>`
 * `diffl : <Self> -> <$diffl>`
   * Recursively performs `Self[0] - Self[1]` until a single value is obtained in `<$diffl>`
   * The value of an item is determined by its value returned via `execute store result`
