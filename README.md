@@ -81,7 +81,7 @@ The following categories are used:
 The PTL works to avoid code duplication. For example, all data types are subtypes of List, meaning all List operations will function on other types; this is useful for certain common operations like `find`, but should be utilized cautiously since improper use of List operations on other types may muddle the format of the type.
 
 ### Documentation
-All member functions for data types contain Javadoc headers in their execution files, detailing all arguments, returns, and data races. Each data type also contains documentation summaries for these functions in their respective `DOCS.md`, along with analogous documentation for code templates. Any member function with a ~~struck-out~~ summary has yet to be implemented or is otherwise undergoing a rewrite/bug fix.
+All member functions for data types contain Javadoc headers in their execution files, detailing all arguments, returns, and data races. Each data type also contains documentation summaries for these functions in their respective `README.md` text files, along with analogous documentation for code templates. Any member function with a ~~struck-out~~ summary has yet to be implemented or is otherwise undergoing a rewrite/bug fix.
 
 Additional documentation can be provided by users should it be justifiably necessary.
 
@@ -90,3 +90,6 @@ The PTL can be installed by either downloading the most recent release as a ZIP 
 
 ## Bug Reports
 Any known bugs should be raised as an issue on this repository with a simple (ideally _simplest_) reproducible setup. The general functionality of PTL functions can be ascertained via the unit tests found in the `tests` folder. To perform these tests, run `/function ptl:tests/all` in a _Minecraft_ world with the PTL enabled as a datapack; the output will be the number of successful tests compared to the total number, with erroneous results recorded as they appear. To test a specific data type, use `/function ptl:tests/<type>`.
+
+## Disclaimer
+MC-PTL is in no way affiliated with _Minecraft_, Mojang Studios, Microsoft Corporation, or any of their related subsidiaries. All code elements of the PTL make use of official _Minecraft_ programming APIs and engines, and do not constitute any form of game modification. Use of the MC-PTL must fall under the _Minecraft_ EULA.

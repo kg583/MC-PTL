@@ -1,6 +1,6 @@
 # Vectors
 
-A _Vector_ is an ordered type which stores data as a fixed sequence of _coordinates_, integer values representing motion or direction in space. A Vector is accessed using the _index_ of a coordinate; that is, its place in the sequence. Vectors in the PTL are realized as standard NBT int arrays:
+A _Vector_ is an ordered type which stores data as a fixed sequence of _coordinates_ (or just _coords_), integer values representing motion or direction in space. A Vector is accessed using the _index_ of a coordinate; that is, its place in the sequence. Vectors in the PTL are realized as standard NBT int arrays:
 ```
 MyVector = [I;23,51,-999]
 ```
@@ -14,29 +14,22 @@ The following operations on Lists are provided, either as functions or translata
   * If `<Other>` is longer than `<Self>`, extra values are ignored
 * `cross : <Self> <Other> -> <Cross>`
   * Computes the cross product between `<Self>` and `<Other>` in `<Cross>`
-  * Does nothing if both Vectors are not 3-dimensional
-* `cube : <Self> -> <Self>`
-  * Cubes each coordinate in `<Self>`
+  * Does nothing if either Vector is not 3-dimensional
 * `divc : <Self> <$value> -> <Self>`
   * Divides each coordinate in `<Self>` by `<$value>`
 * `divv : <Self> <Other> -> <Self>`
   * Performs coordinate-wise division between `<Self>` and `<Other>`, extending `<Other>` with ones if necessary
   * If `<Other>` is longer than `<Self>`, extra values are ignored
 * `dot : <Self> <Other> -> <$dot>`
-  * Computes the dot product of `<Self>` and `<Other>` in `<$dot>`
+  * Computes the dot product of `<Self>` and `<Other>` in `<$dot>`, using the minimum of the two factors' lengths
+  * More efficient than chaining `prod` and `sum`
 * `extend : <Self> <$value> <$count> -> <Self>`
   * Appends `<$count>` copies of `<$value>` to `<Self>`
-* `get : <Self> <$index> -> <Self> <$coord>`
+* `get : <Self> <$index> -> <$coord>`
   * Returns the `<$coord>` in `<Self>` at `<$index>`
   * Does not alter `<$coord>` if `<$index>` is out-of-range
 * `length : execute store result <$score> <obj> run data get <locale> <path-to-Self>`
   * Stores the length of `<Self>` in `<$score> <obj>`
-* `max : <Self> -> <$max>`
-  * Computes the maximum value in `<Self>` in `<$max>`
-  * The value of an item is determined by its value returned via `execute store result`
-* `min : <Self> -> <$min>`
-  * Computes the minimum value in `<Self>` in `<$min>`
-  * The value of an item is determined by its value returned via `execute store result`
 * `mulc : <Self> <$value> -> <Self>`
   * Multiplies `<$value>` with every coordinate of `<Self>`
 * `mulv : <Self> <Other> -> <Self>`
@@ -46,9 +39,9 @@ The following operations on Lists are provided, either as functions or translata
   * Negates every entry in `<Self>`
 * `norm : <Self> -> <$norm>`
   * Computes the squared norm of `<Self>`
-* `prod : <Self> -> <$prod>`
-  * Computes the product of all coordinates in `<Self>` in `<$prod>`
-  * The value of an item is determined by its value returned via `execute store result`
+  * More efficient than chaining `square` and `sum`
+* `pow : <Self> <$power> -> <Self>`
+  * Raises each coordinate in `<Self>` to the `<$power>`th power
 * `set : <Self> <$index> <$coord> -> <Self>`
   * Sets the item at `<$index>` in `<Self>` to `<$coord>`
   * Appends `<$coord>` to `<Self>` if it would be placed there, does nothing otherwise
@@ -59,6 +52,3 @@ The following operations on Lists are provided, either as functions or translata
 * `subv : <Self> <Other> -> <Self>`
   * Performs coordinate-wise subtraction between `<Self>` and `<Other>`, extending `<Other>` with zeroes if necessary
   * If `<Other>` is longer than `<Self>`, extra values are ignored
-* `sum : <Self> -> <$sum>`
-  * Computes the sum of all coordinates in `<Self>` in `<$sum>`
-  * The value of an item is determined by its value returned via `execute store result`
