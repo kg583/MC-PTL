@@ -6,4 +6,4 @@
 data modify storage ptl:stdout List.Self set value []
 execute store result $length var run data get ptl:stdin List.Self
 scoreboard players operation $list.index stdin %= $length var
-function list/inserter
+function list/_insert

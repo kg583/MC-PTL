@@ -6,4 +6,4 @@
 data modify storage ptl:stdout List.Self set value []
 execute store result $length var run data get ptl:stdin List.Self
 scoreboard players operation $list.index stdin %= $length var
-execute if data storage ptl:stdin List.Self[0] run function list/popper
+execute if data storage ptl:stdin List.Self[0] run function list/_pop

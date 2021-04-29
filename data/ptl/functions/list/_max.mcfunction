@@ -1,4 +1,4 @@
 execute store result score $current var run data get storage ptl:stdin List.Self[0]
 scoreboard players operation $list.max stdout > $current var
 data remove storage ptl:stdin List.Self[0]
-execute if data storage ptl:stdin List.Self[0] run function ptl:list/max_finder
+execute if data storage ptl:stdin List.Self[0] run function ptl:list/_max

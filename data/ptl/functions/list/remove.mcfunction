@@ -5,4 +5,4 @@
 # @stdout List.Self    <Self> with the first instance of <Item> removed
 scoreboard players set $list.index stdout -1
 data modify storage ptl:stdout List.Self set value []
-execute if data storage ptl:stdin List.Self[0] run function list/remover
+execute if data storage ptl:stdin List.Self[0] run function list/_remove

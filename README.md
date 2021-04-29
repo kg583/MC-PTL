@@ -45,8 +45,10 @@ The PTL also provides capabilities to easily iterate over container types, which
 data modify storage ptl:var Current set from storage ptl:stdin <type>.Self[0]
 <insert functions to operate on Current here>
 data remove storage ptl:stdin <type>.Self[0]
-execute if data storage ptl:stdin <type>.Self[0] run function <namespace>/my_iterator
+execute if data storage ptl:stdin <type>.Self[0] run function <namespace>:my_iterator
 ```
+
+Many PTL functions are essentially iterators like above; they are designated as `ptl:<type>/_<func>` for each respective type, where `<func>` is the entry point into that iterator. Entry points often do a very limited number of operations, such as clearing a list or shuffling inputs, before initiating the iterator; they might also modify return values to match expected outputs, all to ensure the standard parameter-passing format for the PTL. To this end, only entry points should ever be called; some iterators are their own entry points, in which case no `_` is prepended to the function name and the designation of that function as an entry point is maintained.
 
 ## Code Design
 The PTL makes use of existing `MCFUNCTION` commands and side-effects to implement its data types. Since function parameters are not passable directly in `MCFUNCTION` code, the PTL makes use of a standardized system of scoreboard objectives and command storage locations for inputs and returns. Variables are implemented as fake player names starting with `$` in the scoreboard, which can be viewed using the appropriate scoreboard display for debugging; the preceding `$` is dropped in command storage names. Each variable is assigned to a _category_, which describes its use in PTL functions; such categories can be used in general datapack code as well to maintain consistency with PTL standards.

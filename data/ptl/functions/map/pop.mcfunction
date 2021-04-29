@@ -4,4 +4,4 @@
 # @stdout Map.Value   The value in <Self> at <Key>
 # @stdout Map.Self    <Self> with <Key> removed
 data modify storage ptl:stdout Map.Self set value []
-execute if data storage ptl:stdin Map.Self[0] run function map/popper
+execute if data storage ptl:stdin Map.Self[0] run function map/_pop
