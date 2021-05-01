@@ -42,7 +42,7 @@ If the former mode of access is all that is being done on a given container, the
 The PTL also provides capabilities to easily iterate over container types, which is similarly challenging if not impossible using standard NBT types. Each type contains template code for iterating over its contents, whereby the necessary functions and operations on the data can be substituted. Iteration looks roughly like:
 ```
 # my_iterator.mcfunction
-data modify storage ptl:var Current set from storage ptl:stdin <type>.Self[0]
+data modify storage ptl:temp Current set from storage ptl:stdin <type>.Self[0]
 <insert functions to operate on Current here>
 data remove storage ptl:stdin <type>.Self[0]
 execute if data storage ptl:stdin <type>.Self[0] run function <namespace>:my_iterator
@@ -75,14 +75,14 @@ The following categories are used:
 * `temp`
   * Values which remain internal to function calls
       * There should be no expectation of a `temp` value surviving between function calls
-  * Names should be in `pointed.snake_case or Pointed.UpperCamelCase`
-  * Example: `data modify storage ptl:temp Map.Match set value {Key:"foo",Value:"bar"}`
+  * Names should be in `snake_case or UpperCamelCase`
+  * Example: `data modify storage ptl:temp Match set value {Key:"foo",Value:"bar"}`
 * `var`
  	* Values which can be used across namespaces and may be changed freely
       * This category serves as a basis/guideline for general datapack use
       * No PTL function modifies any `var` values directly
  	* Names should be in `snake_case` or `UpperCamelCase`
- 	* Example: `scoreboard players set $my_var var 42`
+ 	* Example: `scoreboard players set $my_temp temp 42`
 
 ### Code Duplication
 The PTL works to avoid code duplication. For example, all data types are subtypes of List, meaning all List operations will function on other types; this is useful for certain common operations like `find`, but should be utilized cautiously since improper use of List operations on other types may muddle the format of the type.
