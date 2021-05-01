@@ -47,6 +47,7 @@ The following operations on Lists are provided, either as functions or translata
   * Appends `<$coord>` to `<Self>` if it would be placed there, does nothing otherwise
 * `square : <Self> -> <Self>`
   * Squares each coordinate in `<Self>`
+  * More efficient than `pow`
 * `subc : <Self> <$value> -> <Self>`
   * Subtracts `<$value>` from every coordinate of `<Self>`
 * `subv : <Self> <Other> -> <Self>`

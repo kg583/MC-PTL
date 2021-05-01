@@ -70,14 +70,19 @@ The following categories are used:
 * `stdout`
  	* Values which are returned from a function
       * The modified data on which the operation was performed should be returned in `ptl:stdout <type>.Self`
-      * Only input parameters which are potentially altered/explicitly returned are passed to `stdout`
  	* Names should be in `pointed.snake_case` or `Pointed.UpperCamelCase`
  	* Example: `scoreboard players get $set.is_subset stdout`
+* `temp`
+  * Values which remain internal to function calls
+      * There should be no expectation of a `temp` value surviving between function calls
+  * Names should be in `pointed.snake_case or Pointed.UpperCamelCase`
+  * Example: `data modify storage ptl:temp Map.Match set value {Key:"foo",Value:"bar"}`
 * `var`
- 	* Values which can change during execution
-      * There should be no expectation of a `var` variable surviving between independent function calls
+ 	* Values which can be used across namespaces and may be changed freely
+      * This category serves as a basis/guideline for general datapack use
+      * No PTL function modifies any `var` values directly
  	* Names should be in `snake_case` or `UpperCamelCase`
- 	* Example: `data modify storage ptl:var MyVar set value "foo"`
+ 	* Example: `scoreboard players set $my_var var 42`
 
 ### Code Duplication
 The PTL works to avoid code duplication. For example, all data types are subtypes of List, meaning all List operations will function on other types; this is useful for certain common operations like `find`, but should be utilized cautiously since improper use of List operations on other types may muddle the format of the type.
