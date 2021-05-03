@@ -40,8 +40,8 @@ The following operations on Lists are provided, either as functions or translata
 * `norm : <Self> -> <$norm>`
   * Computes the squared norm of `<Self>`
   * More efficient than chaining `square` and `sum`
-* `pow : <Self> <$power> -> <Self>`
-  * Raises each coordinate in `<Self>` to the `<$power>`th power
+* ~~`pow : <Self> <$exp> -> <Self>`~~
+  * ~~Raises each coordinate in `<Self>` to the `<$exp>`th power~~
 * `set : <Self> <$index> <$coord> -> <Self>`
   * Sets the item at `<$index>` in `<Self>` to `<$coord>`
   * Appends `<$coord>` to `<Self>` if it would be placed there, does nothing otherwise
