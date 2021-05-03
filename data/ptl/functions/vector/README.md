@@ -4,7 +4,7 @@ A _Vector_ is an ordered type which stores data as a fixed sequence of _coordina
 ```
 MyVector = [I;23,51,-999]
 ```
-Accessing an index takes time proportional to the index. Ints are signed 32-bit integral types, and thus have a maximum magnitude of ~2 billion with either sign.
+Accessing an index takes time proportional to the index. Ints are signed 32-bit integral types, and thus have a maximum magnitude of ~2 billion with either sign. Vector operations do not check for potential overflows in this range.
 
 The following operations on Lists are provided, either as functions or translatable snippets:
 * `addc : <Self> <$value> -> <Self>`
