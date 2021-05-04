@@ -30,6 +30,10 @@ The following operations on Lists are provided, either as functions or translata
   * Does not alter `<$get>` if `<$index>` is out-of-range
 * `length : execute store result <$score> <obj> run data get <locale> <path-to-Self>`
   * Stores the length of `<Self>` in `<$score> <obj>`
+* `max : <Self> -> <$max>`
+  * Computes the maximum value in `<Self>`
+* `min : <Self> -> <$min>`
+  * Computes the minimum value in `<Self>`
 * `modpow : <Self> <$exp> <$mod> -> <Self>`
   * Raises each coordinate in `<Self>` to the `<$exp>`th power modulo `<$mod>``
 * `mulc : <Self> <$value> -> <Self>`

@@ -33,11 +33,11 @@ The following operations on Lists are provided, either as functions or translata
   * Appends `<Item>` to `<Self>` if it would be placed there, does nothing otherwise
 * `length : execute store result <$score> <obj> run data get <locale> <path-to-Self>`
   * Stores the length of `<Self>` in `<$score> <obj>`
-* `max : <Self> -> <$max>`
-  * Computes the maximum value in `<Self>` in `<$max>`
+* `max : <Self> -> <Max>`
+  * Computes the maximum value in `<Self>`
   * The value of an item is determined by its value returned via `execute store result`
-* `min : <Self> -> <$min>`
-  * Computes the minimum value in `<Self>` in `<$min>`
+* `min : <Self> -> <Min>`
+  * Computes the minimum value in `<Self>`
   * The value of an item is determined by its value returned via `execute store result`
 * `pop : <Self> <$index> -> <Self> <Pop>`
   * Deletes the item specified by `<$index>` from `<Self>`, returning the shortened list
