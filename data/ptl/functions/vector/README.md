@@ -31,7 +31,7 @@ The following operations on Lists are provided, either as functions or translata
 * `length : execute store result <$score> <obj> run data get <locale> <path-to-Self>`
   * Stores the length of `<Self>` in `<$score> <obj>`
 * `modpow : <Self> <$exp> <$mod> -> <Self>`
-  * Raises each coordinate in `<Self>` to the `<$exp>`th power modulo `<$mod>
+  * Raises each coordinate in `<Self>` to the `<$exp>`th power modulo `<$mod>``
 * `mulc : <Self> <$value> -> <Self>`
   * Multiplies `<$value>` with every coordinate of `<Self>`
 * `mulv : <Self> <Other> -> <Self>`
