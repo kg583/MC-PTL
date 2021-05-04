@@ -11,22 +11,22 @@ The following operations on Maps are provided, either as functions or translatab
   * Creates a map `<Self>` pairing `<Keys>` to `<Values>` in order
   * If duplicate keys are provided, the last value is used
   * If more values than keys are provided, the extra values are ignored
-* `filter : <Self> <Value> -> <Filtered> <Rest>`
-  * Returns two maps: `<Filtered>`, containing all items with value equal to `<Value>`, and `<Rest>`, containing the rest of `<Self>`
-  * Either of `<Filtered>` and `<Rest>` may be empty
-* `get : <Self> <Key> -> <Value>`
-  * Returns the `<Value>` in `<Self>` associated with `<Key>`
-  * Does not alter `<Value>` if `<Key>` is not in `<Self>`
+* `filter : <Self> <Value> -> <Self> <Filter>`
+  * Returns a Map containing all items with value equal to `<Value>`
+  * Removes all such items from `<Self>`
+* `get : <Self> <Key> -> <Get>`
+  * Returns the value in `<Self>` associated with `<Key>`
+  * Does not alter `<Get>` if `<Key>` is not in `<Self>`
 * `length : execute store result <$score> <obj> run data get <locale> <path-to-Self>`
   * Stores the length of `<Self>` in `<$score> <obj>`
 * `keys : data get <locale> <path-to-Self>[].Key`
   * Returns the keys of `<Self>` as a List
-* `merge : <Self> <Other> -> <Merged>`
+* `merge : <Self> <Other> -> <Merge>`
   * Combines the maps `<Self>` and `<Other>` into a single map
   * If both `<Self>` and `<Other>` contain the same key, values from `<Other>` take precedence
-* `pop : <Self> <Key> -> <Self> <Value>`
+* `pop : <Self> <Key> -> <Self> <Pop>`
   * Removes the item specified by `<Key>` from `<Self>`, returning the reduced map
-  * Does nothing if `<Key>` is not in `<Self>`, and sets `<Value>` to the corresponding value otherwise
+  * Does nothing if `<Key>` is not in `<Self>`, and sets `<Pop>` to the corresponding value otherwise
 * `set : <Self> <Key> <Value> -> <Self>`
   * Sets the value of `<Key>` in `<Self>` to `<Value>`
   * If the `<Key>` does not exist in `<Self>`, it is added (to the end)

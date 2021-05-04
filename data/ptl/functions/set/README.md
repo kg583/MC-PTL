@@ -17,5 +17,5 @@ The following operations on Sets are provided, either as functions or translatab
   * Stores the length of `<Self>` in `<$score> <obj>`
 * `or : <Self> <Other> -> <Or>`
   * Returns the Set of all items in `<Self>` or `<Other>`
-* `subset : <Self> <Other> -> <$is_subset>`
+* `subset : <Self> <Other> -> <$subset>`
   * Returns whether `<Other>` is a subset of `<Self>`

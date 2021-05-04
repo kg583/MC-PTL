@@ -17,13 +17,13 @@ The following mathematical operations are provided, either as functions or trans
   * Computes the number of digits in the string representation of `<$num>`, accounting for sign
 * `log : <$num> <$base> -> <$log>`
   * Computes the logarithm of `<$num>` with base `<$base>`, rounded down
-* `modpow : <$base> <$exp> <$mod> -> <$power>`
+* `modpow : <$base> <$exp> <$mod> -> <$modpow>`
   * Computes `<$base>` raised to the `<$exp>`th power modulo `<$mod>`
   * Cannot overflow if `<$mod>` is less than 2^15
 * `perm : <$n> <$r> -> <$perms>`
   * Computes `nPr`, the number of ways to choose `<$r>` things from `<$n>` options considering order
   * More efficient than arithmetic on `fact`
-* `pow : <$base> <$exp> -> <$power>`
+* `pow : <$base> <$exp> -> <$pow>`
   * Computes `<$base>` raised to the `<$exp>`th power
 * ~~`root : <$num> <$n> -> <$root>`~~
   * ~~Computes the `<$n>`th root of `<$num>`, rounded down~~

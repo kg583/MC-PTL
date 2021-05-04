@@ -25,9 +25,9 @@ The following operations on Lists are provided, either as functions or translata
   * More efficient than chaining `prod` and `sum`
 * `extend : <Self> <$value> <$count> -> <Self>`
   * Appends `<$count>` copies of `<$value>` to `<Self>`
-* `get : <Self> <$index> -> <$coord>`
-  * Returns the `<$coord>` in `<Self>` at `<$index>`
-  * Does not alter `<$coord>` if `<$index>` is out-of-range
+* `get : <Self> <$index> -> <$get>`
+  * Returns the coordinate in `<Self>` at `<$index>`
+  * Does not alter `<$get>` if `<$index>` is out-of-range
 * `length : execute store result <$score> <obj> run data get <locale> <path-to-Self>`
   * Stores the length of `<Self>` in `<$score> <obj>`
 * `mulc : <Self> <$value> -> <Self>`
