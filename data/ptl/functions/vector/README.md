@@ -55,3 +55,5 @@ The following operations on Lists are provided, either as functions or translata
 * `subv : <Self> <Other> -> <Self>`
   * Performs coordinate-wise subtraction between `<Self>` and `<Other>`, extending `<Other>` with zeroes if necessary
   * If `<Other>` is longer than `<Self>`, extra values are ignored
+* `zero : data modify <locale> <path-to-Self>[] set value 0`
+  * Sets every entry in `<Self>` to zero without affecting length
