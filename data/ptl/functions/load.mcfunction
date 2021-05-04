@@ -1,6 +1,6 @@
 # Vars
 scoreboard objectives add const dummy
-scoreboard objectives add temp dummy
+scoreboard objectives add tmp dummy
 scoreboard objectives add var dummy
 
 scoreboard objectives add stdin dummy

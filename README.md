@@ -13,7 +13,7 @@ The PTL currently contains interfaces for:
 * Vectors
   * Ordered tuples of floats representing arrows in space
 
-Each subdirectory contains the relevant interface documentation for the given data type in `DOCS.md`. Each function is entirely self-contained, making use of a standardized input/output system. Certain operations are presented as code templates rather than complete functions due to their brevity; for example, the `length` operation available for all data types can be computed and stored in `<$score> <obj>` via
+Each subdirectory contains the relevant interface documentation for the given data type in `DOCS.md`. Each function is entirely self-contained, making use of a standardized input/output system. Certain operations are presented as code tmplates rather than complete functions due to their brevity; for example, the `length` operation available for all data types can be computed and stored in `<$score> <obj>` via
 ```
 execute store result <$score> <obj> run data get <data-path>
 ```
@@ -39,10 +39,10 @@ In the first line, the list entry at a specific index is being set to a given va
 If the former mode of access is all that is being done on a given container, then the PTL is not necessary; standard NBT types will be smaller and more succinct in such cases as well. However, it is rare to not require access in the latter form in more complex code, so using the PTL should be considered as a standard format for such purposes.
 
 ### Iteration
-The PTL also provides capabilities to easily iterate over container types, which is similarly challenging if not impossible using standard NBT types. Each type contains template code for iterating over its contents, whereby the necessary functions and operations on the data can be substituted. Iteration looks roughly like:
+The PTL also provides capabilities to easily iterate over container types, which is similarly challenging if not impossible using standard NBT types. Each type contains tmplate code for iterating over its contents, whereby the necessary functions and operations on the data can be substituted. Iteration looks roughly like:
 ```
 # my_iterator.mcfunction
-data modify storage ptl:temp Current set from storage ptl:stdin <type>.Self[0]
+data modify storage ptl:tmp Current set from storage ptl:stdin <type>.Self[0]
 <insert functions to operate on Current here>
 data remove storage ptl:stdin <type>.Self[0]
 execute if data storage ptl:stdin <type>.Self[0] run function <namespace>:my_iterator
@@ -72,23 +72,23 @@ The following categories are used:
       * The modified data on which the operation was performed should be returned in `ptl:stdout <type>.Self`
  	* Names should be in `pointed.snake_case` or `Pointed.UpperCamelCase`
  	* Example: `scoreboard players get $set.is_subset stdout`
-* `temp`
+* `tmp`
   * Values which remain internal to function calls
-      * There should be no expectation of a `temp` value surviving between function calls
+      * There should be no expectation of a `tmp` value surviving between function calls
   * Names should be in `snake_case or UpperCamelCase`
-  * Example: `data modify storage ptl:temp Match set value {Key:"foo",Value:"bar"}`
+  * Example: `data modify storage ptl:tmp Match set value {Key:"foo",Value:"bar"}`
 * `var`
  	* Values which can be used across namespaces and may be changed freely
       * This category serves as a basis/guideline for general datapack use
       * No PTL function modifies any `var` values directly
  	* Names should be in `snake_case` or `UpperCamelCase`
- 	* Example: `scoreboard players set $my_temp temp 42`
+ 	* Example: `scoreboard players set $my_var var 42`
 
 ### Code Duplication
 The PTL works to avoid code duplication. For example, all data types are subtypes of List, meaning all List operations will function on other types; this is useful for certain common operations like `find`, but should be utilized cautiously since improper use of List operations on other types may muddle the format of the type.
 
 ### Documentation
-All member functions for data types contain Javadoc headers in their execution files, detailing all arguments, returns, and data races. Each data type also contains documentation summaries for these functions in their respective `README.md` text files, along with analogous documentation for code templates. Any member function with a ~~struck-out~~ summary has yet to be implemented or is otherwise undergoing a rewrite/bug fix.
+All member functions for data types contain Javadoc headers in their execution files, detailing all arguments, returns, and data races. Each data type also contains documentation summaries for these functions in their respective `README.md` text files, along with analogous documentation for code tmplates. Any member function with a ~~struck-out~~ summary has yet to be implemented or is otherwise undergoing a rewrite/bug fix.
 
 Additional documentation can be provided by users should it be justifiably necessary.
 
