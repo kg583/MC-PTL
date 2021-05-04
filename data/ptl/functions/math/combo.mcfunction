@@ -5,5 +5,5 @@
 scoreboard players operation $math.num stdin = $math.r stdin
 function ptl:math/fact
 function ptl:math/perm
-scoreboard players operation $math.combos stdout = $math.perms stdout
-scoreboard players operation $math.combos stdout /= $math.fact stdout
+scoreboard players operation $math.combo stdout = $math.perm stdout
+scoreboard players operation $math.combo stdout /= $math.fact stdout

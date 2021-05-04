@@ -5,7 +5,7 @@ Math functions are operations on scoreboard values which offer extended support 
 The following mathematical operations are provided, either as functions or translatable snippets:
 * `abs : execute unless score <$score> <obj> matches 0.. run scoreboard players operation <$score> <obj> *= $NEG const`
   * Sets the value of `<$score> <obj>` to its absolute value
-* `combo : <$n> <$r> -> <$combos>`
+* `combo : <$n> <$r> -> <$combo>`
   * Computes the binomial coefficient `nCr`, the number of ways to choose `<$r>` things from `<$n>` options independent of order
   * More efficient than arithmetic on `fact`
 * `copysign : <$num> <$sign> -> <$num>`
@@ -20,7 +20,7 @@ The following mathematical operations are provided, either as functions or trans
 * `modpow : <$base> <$exp> <$mod> -> <$modpow>`
   * Computes `<$base>` raised to the `<$exp>`th power modulo `<$mod>`
   * Cannot overflow if `<$mod>` is less than 2^15
-* `perm : <$n> <$r> -> <$perms>`
+* `perm : <$n> <$r> -> <$perm>`
   * Computes `nPr`, the number of ways to choose `<$r>` things from `<$n>` options considering order
   * More efficient than arithmetic on `fact`
 * `pow : <$base> <$exp> -> <$pow>`
