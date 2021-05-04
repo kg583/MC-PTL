@@ -30,6 +30,8 @@ The following operations on Lists are provided, either as functions or translata
   * Does not alter `<$get>` if `<$index>` is out-of-range
 * `length : execute store result <$score> <obj> run data get <locale> <path-to-Self>`
   * Stores the length of `<Self>` in `<$score> <obj>`
+* `modpow : <Self> <$exp> <$mod> -> <Self>`
+  * Raises each coordinate in `<Self>` to the `<$exp>`th power modulo `<$mod>
 * `mulc : <Self> <$value> -> <Self>`
   * Multiplies `<$value>` with every coordinate of `<Self>`
 * `mulv : <Self> <Other> -> <Self>`
@@ -40,8 +42,8 @@ The following operations on Lists are provided, either as functions or translata
 * `norm : <Self> -> <$norm>`
   * Computes the squared norm of `<Self>`
   * More efficient than chaining `square` and `sum`
-* ~~`pow : <Self> <$exp> -> <Self>`~~
-  * ~~Raises each coordinate in `<Self>` to the `<$exp>`th power~~
+* `pow : <Self> <$exp> -> <Self>`
+  * Raises each coordinate in `<Self>` to the `<$exp>`th power
 * `set : <Self> <$index> <$coord> -> <Self>`
   * Sets the item at `<$index>` in `<Self>` to `<$coord>`
   * Appends `<$coord>` to `<Self>` if it would be placed there, does nothing otherwise
