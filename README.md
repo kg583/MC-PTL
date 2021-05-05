@@ -13,7 +13,7 @@ The PTL currently contains interfaces for:
 * Vectors
   * Ordered tuples of floats representing arrows in space
 
-Each subdirectory contains the relevant interface documentation for the given data type in `DOCS.md`. Each function is entirely self-contained, making use of a standardized input/output system. Certain operations are presented as code tmplates rather than complete functions due to their brevity; for example, the `length` operation available for all data types can be computed and stored in `<$score> <obj>` via
+Each subdirectory contains the relevant interface documentation for the given data type in `DOCS.md`. Each function is entirely self-contained, making use of a standardized input/output system akin to standard object-oriented programming. Certain operations are presented as code templates rather than complete functions due to their brevity; for example, the `length` operation available for all data types can be computed and stored in `<$score> <obj>` via
 ```
 execute store result <$score> <obj> run data get <data-path>
 ```
@@ -39,7 +39,7 @@ In the first line, the list entry at a specific index is being set to a given va
 If the former mode of access is all that is being done on a given container, then the PTL is not necessary; standard NBT types will be smaller and more succinct in such cases as well. However, it is rare to not require access in the latter form in more complex code, so using the PTL should be considered as a standard format for such purposes.
 
 ### Iteration
-The PTL also provides capabilities to easily iterate over container types, which is similarly challenging if not impossible using standard NBT types. Each type contains tmplate code for iterating over its contents, whereby the necessary functions and operations on the data can be substituted. Iteration looks roughly like:
+The PTL also provides capabilities to easily iterate over container types, which is similarly challenging if not impossible using standard NBT types. Each type contains template code for iterating over its contents, whereby the necessary functions and operations on the data can be substituted. Iteration looks roughly like:
 ```
 # my_iterator.mcfunction
 data modify storage ptl:tmp Current set from storage ptl:stdin <type>.Self[0]
@@ -50,8 +50,13 @@ execute if data storage ptl:stdin <type>.Self[0] run function <namespace>:my_ite
 
 Many PTL functions are essentially iterators like above; they are designated as `ptl:<type>/_<func>` for each respective type, where `<func>` is the entry point into that iterator. Entry points often do a very limited number of operations, such as clearing a list or shuffling inputs, before initiating the iterator; they might also modify return values to match expected outputs, all to ensure the standard parameter-passing format for the PTL. To this end, only entry points should ever be called; some iterators are their own entry points, in which case no `_` is prepended to the function name and the designation of that function as an entry point is maintained.
 
+### Object-Orientation
+The PTL observes an approximate form of object-orientation, which is perhaps best exemplified by the library's heavy use of `<Self>` as a data parameter. This design choice is to primarily facilitate higher-level scripting capabilities and bindings, but can be utilized by standard `mcfunction` code to reduce data shuffling.
+
 ## Code Design
 The PTL makes use of existing `mcfunction` commands and side-effects to implement its data types. Since function parameters are not passable directly in `mcfunction` code, the PTL makes use of a standardized system of scoreboard objectives and command storage locations for inputs and returns. Variables are implemented as fake player names starting with `$` in the scoreboard, which can be viewed using the appropriate scoreboard display for debugging; the preceding `$` is dropped in command storage names. Each variable is assigned to a _category_, which describes its use in PTL functions; such categories can be used in general datapack code as well to maintain consistency with PTL standards.
+
+Function returns are implemented similarly, being scores or command storage locations with the same name as the function. Only one return is permitted from a function, with any additional information or side-effects conveyed by modifying the type instance `<Self>`.
 
 ### Data Categories
 The following categories are used:
@@ -63,15 +68,16 @@ The following categories are used:
 * `stdin`
  	* Values which are inputs to a function
       * Values derived directly from inputs can also be placed in this category
-      * The input data type on which to operate should be passed as `ptl:stdin <type>.Self`, which is not guaranteed to be preserved
+      * The input type instance on which to operate should be passed as `ptl:stdin <type>.Self`, which is not guaranteed to be preserved
       * Necessary inputs are assumed to exist once a function is called
  	* Names should be in `pointed.snake_case` or `Pointed.UpperCamelCase`
  	* Example: `data modify storage ptl:stdin List.Self set value [1,2,3]`
 * `stdout`
- 	* Values which are returned from a function
-      * The modified data on which the operation was performed should be returned in `ptl:stdout <type>.Self`
+ 	* Value which is returned from a function
+      * Returns should be stored in `ptl:stdout <type>.<Func>` or `$<type>.<func> stdout` as appropriate
+      * The type instance on which a function was performed should be returned in `ptl:stdout <type>.Self`, preserved if unaltered during execution
  	* Names should be in `pointed.snake_case` or `Pointed.UpperCamelCase`
- 	* Example: `scoreboard players get $set.is_subset stdout`
+ 	* Example: `scoreboard players get $set.subset stdout`
 * `tmp`
   * Values which remain internal to function calls
       * There should be no expectation of a `tmp` value surviving between function calls

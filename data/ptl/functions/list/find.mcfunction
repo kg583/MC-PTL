@@ -2,5 +2,6 @@
 # @stdin  List.Self    The List to search
 # @stdin  List.Item    The item to search for
 # @stdout $list.find   The first index of <Item> in <Self> if it exists, -1 otherwise
+data modify storage ptl:stdout List.Self set from storage ptl:stdin List.Self
 scoreboard players set $list.find stdout -1
 execute if data storage ptl:stdin List.Self[0] run function ptl:list/_find

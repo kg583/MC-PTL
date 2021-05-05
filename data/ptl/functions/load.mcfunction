@@ -7,9 +7,9 @@ scoreboard objectives add stdin dummy
 scoreboard objectives add stdout dummy
 
 # Consts
-scoreboard players set $NEG const -1
-scoreboard players set $ZERO const 0
-scoreboard players set $ONE const 1
+scoreboard players set $-1 const -1
+scoreboard players set $0 const 0
+scoreboard players set $1 const 1
 scoreboard players set $TICK const 20
 
 # Finish

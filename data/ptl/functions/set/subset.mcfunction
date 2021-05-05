@@ -2,6 +2,7 @@
 # @stdin  Set.Self       The base Set
 # @stdin  Set.Other      The potential subset
 # @stdout $set.subset    Zero if <Other> is not a subset of <Self>, one otherwise
+data modify storage ptl:stdout Set.Self set from storage ptl:stdin Set.Self
 scoreboard players set $set.subset stdout 1
 data modify storage ptl:tmp Match set from storage ptl:stdin Set.Self
 function ptl:set/or

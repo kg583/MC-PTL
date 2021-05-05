@@ -4,6 +4,6 @@
 scoreboard players set $math.base stdin 10
 scoreboard players set $math.length stdout 1
 execute unless score $math.num stdin matches 0.. run scoreboard players add $math.length stdout 1
-execute unless score $math.num stdin matches 0.. run scoreboard players operation $math.num *= $NEG const
+execute unless score $math.num stdin matches 0.. run scoreboard players operation $math.num *= $-1 const
 function ptl:math/log
 execute unless score $math.num stdin matches 0 run scoreboard players operation $math.length stdout += $math.log stdout

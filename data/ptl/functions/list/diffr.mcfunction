@@ -1,10 +1,7 @@
 # list/diffr
 # @stdin  List.Self    The List to reduce
 # @stdout $list.diffr  The recursive reduction of <Self> by subtracting the last two elements
-execute store result score $ultimate tmp run data get storage ptl:stdin List.Self[-1]
-execute store result score $penultimate tmp run data get storage ptl:stdin List.Self[-2]
-scoreboard players operation $penultimate tmp -= $ultimate tmp
-data remove storage ptl:stdin List.Self[-1]
-execute store result storage ptl:stdin List.Self[-1] int 1 run scoreboard players get $penultimate tmp
-execute if data storage ptl:stdin List.Self[-1] run function ptl:list/diffr
+data modify storage ptl:stdout List.Self set from storage ptl:stdin List.Self
+scoreboard players set $penultimate tmp 0
+execute if data storage ptl:stdin List.Self[0] run function ptl:list/_diffr
 scoreboard players operation $list.diffr stdout = $penultimate tmp

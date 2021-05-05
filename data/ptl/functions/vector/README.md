@@ -12,9 +12,9 @@ The following operations on Lists are provided, either as functions or translata
 * `addv : <Self> <Other> -> <Self>`
   * Performs coordinate-wise addition between `<Self>` and `<Other>`, extending `<Other>` with zeroes if necessary
   * If `<Other>` is longer than `<Self>`, extra values are ignored
-* `cross : <Self> <Other> -> <Cross>`
-  * Computes the cross product between `<Self>` and `<Other>` in `<Cross>`
-  * Does nothing if either Vector is not 3-dimensional
+* ~~`cross : <Self> <Other> -> <Cross>`~~
+  * ~~Computes the cross product between `<Self>` and `<Other>` in `<Cross>`~~
+  * ~~Does nothing if either Vector is not 3-dimensional~~
 * `divc : <Self> <$value> -> <Self>`
   * Divides each coordinate in `<Self>` by `<$value>`
 * `divv : <Self> <Other> -> <Self>`
