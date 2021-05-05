@@ -65,12 +65,12 @@ The following operations on Lists are provided, either as functions or translata
 * `set : <Self> <$index> <Item> -> <Self>`
   * Sets the item at `<$index>` in `<Self>` to `<Item>`
   * Appends `<Item>` to `<Self>` if it would be placed there, does nothing otherwise
-* ~~`sorta : <Self> -> <Self>`~~
-  * ~~Sorts `<Self>` in ascending order~~
-  * ~~The value of an item is determined by its value returned via `execute store result`~~
-* ~~`sortd : <Self> -> <Self>`~~
-  * ~~Sorts `<Self>` in descending order
-  * ~~The value of an item is determined by its value returned via `execute store result`~~
+* `sorta : <Self> -> <Self>`
+  * Sorts `<Self>` in ascending order utilizing selection sort
+  * The value of an item is determined by its value returned via `execute store result`
+* `sortd : <Self> -> <Self>`
+  * Sorts `<Self>` in descending order utilizing selection sort
+  * The value of an item is determined by its value returned via `execute store result`
 * `splice : <Self> <$start> <$end> <$step> -> <Splice>`
   * Returns a List containing all items in `<Self>` with indices from `<$start>` to `<$end>`, counted by `<$step>`
   * Does not step outside of the range of `<Self>`
