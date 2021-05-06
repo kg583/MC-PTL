@@ -1,9 +1,9 @@
 # list/insert
-# @stdin  List.Self    The List to insert into
+# @self   List         The List to insert into
 # @stdin  $list.index  The index to insert at
 # @stdin  List.Item    The item to insert
-# @stdout List.Self    <Self> with <Item> inserted at <$index>, with no change if <$index> is out of range
-data modify storage ptl:stdout List.Self set value []
-execute store result $length tmp run data get ptl:stdin List.Self
+data modify storage ptl:tmp List set from storage ptl:self List
+data modify storage ptl:self List set value []
+execute store result $length tmp run data get ptl:tmp List
 scoreboard players operation $list.index stdin %= $length tmp
 function list/_insert
