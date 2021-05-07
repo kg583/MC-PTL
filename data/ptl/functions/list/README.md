@@ -23,6 +23,9 @@ The following operations on Lists are provided, either as functions or translata
 * `find : <Self> <Item> -> <$find>`
   * Finds the earliest index of `<Item>` in `<Self>`
   * Returns `-1` if `<Item>` is not in `<Self>`
+* `flatten : <Self> -> <Self>`
+  * Flattens `<Self>` by concatenating all internal sublists
+  * Every item in `<Self>` is assumed to itself be a List
 * `get : <Self> <$index> -> <Get>`
   * Returns the item in `<Self>` at `<$index>`
   * Does not alter `<Get>` if `<$index>` is out-of-range
