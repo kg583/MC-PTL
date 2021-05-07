@@ -9,13 +9,13 @@ The following operations on Sets are provided, either as functions or translatab
 * `add : <Self> <Item> -> <Self>`
   * Adds `<Item>` to `<Self>`
   * Does nothing if `<Item>` is already present in `<Self>`
-* `and : <Self> <Other> -> <And>`
+* `and : <Self> <Other> -> <Self>`
   * Returns the Set of all items in `<Self>` and `<Other>`
 * `diff : <Self> <Other> -> <Diff>`
   * Removes all items in `<Other>` from `<Self>` if they are present
 * `length : execute store result <$score> <obj> run data get <locale> <path-to-Self>`
   * Stores the length of `<Self>` in `<$score> <obj>`
-* `or : <Self> <Other> -> <Or>`
+* `or : <Self> <Other> -> <Self>`
   * Returns the Set of all items in `<Self>` or `<Other>`
 * `subset : <Self> <Other> -> <$subset>`
   * Returns whether `<Other>` is a subset of `<Self>`
