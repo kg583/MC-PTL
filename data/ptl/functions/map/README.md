@@ -21,7 +21,7 @@ The following operations on Maps are provided, either as functions or translatab
   * Stores the length of `<Self>` in `<$score> <obj>`
 * `keys : data get <locale> <path-to-Self>[].Key`
   * Returns the keys of `<Self>` as a List
-* `merge : <Self> <Other> -> <Merge>`
+* `merge : <Self> <Other> -> <Self>`
   * Combines the maps `<Self>` and `<Other>` into a single map
   * If both `<Self>` and `<Other>` contain the same key, values from `<Other>` take precedence
 * `pop : <Self> <Key> -> <Self> <Pop>`

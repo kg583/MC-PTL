@@ -1,7 +1,7 @@
 # map/pop
-# @stdin  Map.Self    The Map to pop from
+# @self   Map         The Map to pop from
 # @stdin  Map.Key     The key to pop
 # @stdout Map.Pop     The value in <Self> at <Key>
-# @stdout Map.Self    <Self> with <Key> removed
-data modify storage ptl:stdout Map.Self set value []
-execute if data storage ptl:stdin Map.Self[0] run function map/_pop
+data modify storage ptl:tmp Map set from storage ptl:self Map
+data modify storage ptl:self Map set value []
+execute if data storage ptl:tmp Map[0] run function map/_pop
