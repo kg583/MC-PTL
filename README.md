@@ -96,12 +96,12 @@ The following special designation is also used exclusively with command storage:
 This special category is implemented to align with the object-orientation utilized by the PTL and facilitate higher-level scripting capabilities.
 
 ### Code Duplication
-The PTL works to avoid code duplication. For example, all data types are subtypes of List, meaning all List operations will function on other types; this is useful for certain common operations like `find`, but should be utilized cautiously since improper use of List operations on other types may muddle the format of the type.
+The PTL works to avoid code duplication. For example, all data types are subtypes of List, meaning all List operations will function on other types; this is useful for certain common operations like `find`, but should be utilized cautiously since improper use of List operations on other types may muddle the format of the type. To coerce a List into any of the other subtypes, use `<subtype>/build`; note that Maps must be built using two Lists, one for keys and one for the corresponding values.
 
 There are some scenarios, though, where mostly redundant yet particularly specialized code is required. This is mostly seen in specific iterators, where a single scoreboard operation is the only difference between a collection of functions. Such repetition cannot be easily avoided without additional overhead, and does not greatly impact the size or performance of the PTL.
 
 ### Documentation
-All member functions for data types contain Javadoc headers in their execution files, detailing all arguments, returns, and data races. Each data type also contains documentation summaries for these functions in their respective `README.md` text files, along with analogous documentation for code tmplates. Any member function with a ~~struck-out~~ summary has yet to be implemented or is otherwise undergoing a rewrite/bug fix.
+All member functions for data types contain Javadoc headers in their execution files, detailing all arguments, returns, and data races. Each data type also contains documentation summaries for these functions in their respective `README.md` text files, along with analogous documentation for code templates. Any member function with a ~~struck-out~~ summary has yet to be implemented or is otherwise undergoing a rewrite/bug fix.
 
 Additional documentation can be provided by users should it be justifiably necessary.
 
