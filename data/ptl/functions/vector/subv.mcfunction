@@ -1,6 +1,6 @@
 # vector/subv
-# @stdin  Vector.Self    The Vector to subtract from
+# @self   Vector         The Vector to subtract from
 # @stdin  Vector.Other   The Vector to subtract
-# @stdout Vector.Self    <Self> with each coord decremented by the corresponding coord in <Other>
-data modify storage ptl:stdout Vector.Self set value [I;]
-execute if data storage ptl:stdin Vector.Self[0] run function ptl:vector/_sub
+data modify storage ptl:tmp Vector set from storage ptl:self Vector
+data modify storage ptl:self Vector set value [I;]
+execute if data storage ptl:tmp Vector[0] run function ptl:vector/_sub

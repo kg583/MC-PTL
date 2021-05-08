@@ -1,6 +1,6 @@
 # vector/norm
-# @stdin  Vector.Self    The Vector to be measured
+# @self   Vector         The Vector to be measured
 # @stdout $vector.norm   The squared norm of <Self>
-data modify storage ptl:stdout Vector.Self set from storage ptl:stdin Vector.Self
+data modify storage ptl:tmp Vector set from storage ptl:self Vector
 scoreboard players set $vector.norm stdout 0
-execute if data storage ptl:stdin Vector.Self[0] run function ptl:vector/_norm
+execute if data storage ptl:tmp Vector[0] run function ptl:vector/_norm

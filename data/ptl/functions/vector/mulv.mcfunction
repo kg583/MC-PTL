@@ -1,6 +1,6 @@
 # vector/mulv
-# @stdin  Vector.Self    The Vector to multiply
+# @self   Vector         The Vector to multiply
 # @stdin  Vector.Other   The Vector to multiply by
-# @stdout Vector.Self    <Self> with each coord multiplied by the corresponding coord in <Other>
-data modify storage ptl:stdout Vector.Self set value [I;]
-execute if data storage ptl:stdin Vector.Self[0] run function ptl:vector/_mul
+data modify storage ptl:tmp Vector set from storage ptl:self Vector
+data modify storage ptl:self Vector set value [I;]
+execute if data storage ptl:tmp Vector[0] run function ptl:vector/_mul
