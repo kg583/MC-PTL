@@ -17,6 +17,7 @@ function ptl:tests/vector/mulc
 function ptl:tests/vector/mulv
 function ptl:tests/vector/neg
 function ptl:tests/vector/norm
+function ptl:tests/vector/poly
 function ptl:tests/vector/pow
 function ptl:tests/vector/set
 function ptl:tests/vector/square
