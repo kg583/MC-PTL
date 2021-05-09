@@ -1,4 +1,4 @@
-# math.length
+# math/length
 # @stdin  $math.num    The number to find the length of
 # @stdout $math.length The length of <$num> as it would be display as a string
 scoreboard players set $math.base stdin 10

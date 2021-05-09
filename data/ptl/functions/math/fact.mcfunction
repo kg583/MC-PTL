@@ -1,4 +1,4 @@
-# math.fact
+# math/fact
 # @stdin  $math.num    The number to find the factorial of
 # @stdout $math.fact   The factorial of <$num>
 scoreboard players set $math.fact stdout 1

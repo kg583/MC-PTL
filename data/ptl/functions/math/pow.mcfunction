@@ -1,4 +1,4 @@
-# math.pow
+# math/pow
 # @stdin  $math.base   The base of the exponent
 # @stdin  $math.exp    The exponent to raise to
 # @stdout $math.pow    <$base> raised to the <$exp>th power

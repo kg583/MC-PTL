@@ -1,4 +1,4 @@
-# math.log
+# math/log
 # @stdin  $math.num    The number to find the logarithm of
 # @stdin  $math.base   The base of the logarithm
 # @stdout $math.log    The logarithm of <$num> with base <$base>, rounded down

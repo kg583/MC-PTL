@@ -8,9 +8,11 @@ The following mathematical operations are provided, either as functions or trans
 * `combo : <$n> <$r> -> <$combo>`
   * Computes the binomial coefficient `nCr`, the number of ways to choose `<$r>` things from `<$n>` options independent of order
   * More efficient than arithmetic on `fact`
-* `copysign : <$num> <$sign> -> <$num>`
+* `copysign : <$num> <$sign> -> <$copysign>`
   * Sets the sign of `<$num>` to match that of `<$sign>`
   * The sign of the return matches that of `sign`
+* `det : <$a> <$b> <$c> <$d> -> <$det>`
+  * Computes the determinant of the 2x2 matrix `[[a b][c d]]`
 * `fact : <$num> -> <$fact>`
   * Computes the factorial of `<$num>`
 * `length : <$num> -> <$length>`

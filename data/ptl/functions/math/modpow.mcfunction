@@ -1,4 +1,4 @@
-# math.modpow
+# math/modpow
 # @stdin  $math.base   The base of the exponent
 # @stdin  $math.exp    The exponent to raise to
 # @stdin  $math.mod    The modulus of the power
