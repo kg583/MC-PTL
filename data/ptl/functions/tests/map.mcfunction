@@ -6,6 +6,7 @@ scoreboard players set $map.total stdout 0
 
 function ptl:tests/map/build
 function ptl:tests/map/filter
+function ptl:tests/map/find
 function ptl:tests/map/get
 function ptl:tests/map/merge
 function ptl:tests/map/pop

@@ -6,6 +6,7 @@ scoreboard players set $vector.total stdout 0
 
 function ptl:tests/vector/addc
 function ptl:tests/vector/addv
+function ptl:tests/vector/cross
 function ptl:tests/vector/divc
 function ptl:tests/vector/divv
 function ptl:tests/vector/dot

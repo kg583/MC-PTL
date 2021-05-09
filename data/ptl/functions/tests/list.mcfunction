@@ -10,11 +10,13 @@ function ptl:tests/list/diffl
 function ptl:tests/list/diffr
 function ptl:tests/list/extend
 function ptl:tests/list/find
+function ptl:tests/list/flatten
 function ptl:tests/list/get
 function ptl:tests/list/max
 function ptl:tests/list/min
 function ptl:tests/list/pop
 function ptl:tests/list/prod
+function ptl:tests/list/purge
 function ptl:tests/list/quol
 function ptl:tests/list/quor
 function ptl:tests/list/remove
