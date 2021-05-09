@@ -47,6 +47,9 @@ The following operations on Lists are provided, either as functions or translata
   * Adds `<Item>` to the beginning of `<Self>`
 * `prod : <Self> -> <$prod>`
   * Computes the product of all items in `<Self>` in `<$prod>`
+* `purge : <Self> <Item> -> <Self>`
+  * Removes all instances of `<Item>` in `<Self>`
+  * More efficient than repeated `remove`
 * `quol : <Self> -> <$quol>`
   * Recursively performs `Self[0] / Self[1]` until a single value is obtained in `<$quol>`
 * `quor : <Self> -> <$quor>`
