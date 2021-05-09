@@ -14,9 +14,12 @@ The following operations on Maps are provided, either as functions or translatab
 * `filter : <Self> <Value> -> <Self> <Filter>`
   * Returns a Map containing all items with value equal to `<Value>`
   * Removes all such items from `<Self>`
+* `find : <Self> <Value> -> <Find>`
+  * Finds the earliest key whose corresponding value is `<Value>`
+  * Does not modify `<Find>` if `<Value>` cannot be located in `<Self>`
 * `get : <Self> <Key> -> <Get>`
   * Returns the value in `<Self>` associated with `<Key>`
-  * Does not alter `<Get>` if `<Key>` is not in `<Self>`
+  * Does not modify `<Get>` if `<Key>` is not in `<Self>`
 * `length : execute store result <$score> <obj> run data get <locale> <path-to-Self>`
   * Stores the length of `<Self>` in `<$score> <obj>`
 * `keys : data get <locale> <path-to-Self>[].Key`
