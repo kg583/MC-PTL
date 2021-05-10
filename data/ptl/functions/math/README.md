@@ -13,6 +13,9 @@ The following mathematical operations are provided, either as functions or trans
   * The sign of the return matches that of `sign`
 * `det : <$a> <$b> <$c> <$d> -> <$det>`
   * Computes the determinant of the 2x2 matrix `[[a b][c d]]`
+* `expand : <$num> <$base> -> <Expand>`
+  * Computes the digits of the absolute value of `<$num>` in base `<$base>`
+  * Digits are returned in-order in the Vector `<Expand>`
 * `fact : <$num> -> <$fact>`
   * Computes the factorial of `<$num>`
 * `invpow : <$num> <$base> <$exp> -> <$invpow>`
