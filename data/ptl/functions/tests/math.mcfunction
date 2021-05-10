@@ -7,7 +7,9 @@ scoreboard players set $math.total stdout 0
 function ptl:tests/math/combo
 function ptl:tests/math/copysign
 function ptl:tests/math/det
+function ptl:tests/math/expand
 function ptl:tests/math/fact
+function ptl:tests/math/invpow
 function ptl:tests/math/length
 function ptl:tests/math/log
 function ptl:tests/math/modpow
