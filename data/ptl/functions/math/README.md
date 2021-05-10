@@ -15,6 +15,8 @@ The following mathematical operations are provided, either as functions or trans
   * Computes the determinant of the 2x2 matrix `[[a b][c d]]`
 * `fact : <$num> -> <$fact>`
   * Computes the factorial of `<$num>`
+* `invpow : <$num> <$base> <$exp> -> <$invpow>`
+  * Computes `<$num>` after floored division by `<$base>` `<$exp>` times
 * `length : <$num> -> <$length>`
   * Computes the number of digits in the string representation of `<$num>`, accounting for sign
 * `log : <$num> <$base> -> <$log>`
@@ -28,9 +30,9 @@ The following mathematical operations are provided, either as functions or trans
 * `pow : <$base> <$exp> -> <$pow>`
   * Computes `<$base>` raised to the `<$exp>`th power
 * ~~`root : <$num> <$n> -> <$root>`~~
-  * ~~Computes the `<$n>`th root of `<$num>`, rounded down~~
+  * ~~Computes the `<$n>`th root of the absolute value of `<$num>`, rounded down~~
 * `sign : <$num> -> <$sign>`
   * Returns the sign of `<$num>`
   * The sign is `1` if `<$num>` is postive, `0` if `<$num>` is zero, and `-1` otherwise
 * ~~`sqrt : <$num> -> <$sqrt>`~~
-  * ~~Computes the square root of `<$num>`, rounded down~~
+  * ~~Computes the square root of the absolute value of `<$num>`, rounded down~~
