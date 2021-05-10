@@ -1,4 +1,4 @@
-# MC-PTL v0.4
+# MC-PTL v0.5
 MC-PTL or _Minecraft Primitive Type Library_ is a datapack of simple interfaces for common primitive data types and containers in `mcfunction` code. These data types contain and rely solely on standard NBT data types, and are designed to be as lightweight as possible for streamlined integration into other datapacks.
 
 ## Features

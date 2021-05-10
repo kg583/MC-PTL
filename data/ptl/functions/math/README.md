@@ -29,10 +29,10 @@ The following mathematical operations are provided, either as functions or trans
   * More efficient than arithmetic on `fact`
 * `pow : <$base> <$exp> -> <$pow>`
   * Computes `<$base>` raised to the `<$exp>`th power
-* ~~`root : <$num> <$n> -> <$root>`~~
-  * ~~Computes the `<$n>`th root of the absolute value of `<$num>`, rounded down~~
+* `root : <$num> <$n> -> <$root>`
+  * Computes the `<$n>`th root of the absolute value of `<$num>`, rounded down
 * `sign : <$num> -> <$sign>`
   * Returns the sign of `<$num>`
   * The sign is `1` if `<$num>` is postive, `0` if `<$num>` is zero, and `-1` otherwise
-* ~~`sqrt : <$num> -> <$sqrt>`~~
-  * ~~Computes the square root of the absolute value of `<$num>`, rounded down~~
+* `sqrt : <$num> -> <$sqrt>`
+  * Computes the square root of the absolute value of `<$num>`, rounded down
