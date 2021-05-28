@@ -70,7 +70,7 @@ The following operations on Lists are provided, either as functions or translata
   * Sorts `<Self>` in ascending order utilizing selection sort
 * `sortd : <Self> -> <Self>`
   * Sorts `<Self>` in descending order utilizing selection sort
-* `splice : <Self> <$start> <$end> <$step> -> <Splice>`
+* `slice : <Self> <$start> <$end> <$step> -> <Slice>`
   * Returns a List containing all items in `<Self>` with indices from `<$start>` to `<$end>`, counted by `<$step>`
   * Does not step outside of the range of `<Self>`
 * `sum : <Self> -> <$sum>`
